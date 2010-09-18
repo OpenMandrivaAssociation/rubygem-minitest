@@ -2,7 +2,7 @@
 
 Summary:	A small and fast replacement for ruby's huge and slow test/unit
 Name:		rubygem-%{oname}
-Version:	1.5.0
+Version:	1.7.1
 Release:	%mkrel 1
 License:	MIT
 Group:		Development/Ruby
@@ -41,4 +41,3 @@ rm -rf %{buildroot}
 %doc %{ruby_gemdir}/doc/%{oname}-%{version}
 %{ruby_gemdir}/gems/%{oname}-%{version}
 %{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
-
