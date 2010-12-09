@@ -3,7 +3,7 @@
 Summary:	A small and fast replacement for ruby's huge and slow test/unit
 Name:		rubygem-%{oname}
 Version:	1.7.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	MIT
 Group:		Development/Ruby
 URL:		http://%{oname}.rubyforge.org/
@@ -13,6 +13,7 @@ BuildRequires:	ruby-RubyGems
 Requires:	rubygem-hoe >= 2.5.0 rubygem-gemcutter >= 0.2.1
 Requires:	rubygem-rubyforge >= 2.0.3
 BuildArch:	noarch
+Provides:	rubygem(%{oname})
 
 %description
 minitest/unit is a small and fast replacement for ruby's huge and slow
