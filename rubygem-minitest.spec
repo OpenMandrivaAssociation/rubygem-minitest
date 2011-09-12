@@ -10,6 +10,7 @@ URL:		http://%{oname}.rubyforge.org/
 Source0:	http://gems.rubyforge.org/gems/%{oname}-%{version}.gem
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ruby-RubyGems
+BuildRequires:	ruby-rdoc
 Requires:	rubygem-hoe >= 2.5.0 rubygem-gemcutter >= 0.2.1
 Requires:	rubygem-rubyforge >= 2.0.3
 BuildArch:	noarch
