@@ -1,45 +1,82 @@
-%define	oname	minitest
+# Generated from minitest-2.11.0.gem by gem2rpm5 -*- rpm-spec -*-          
+%define	rbname	minitest
 
-Summary:	A small and fast replacement for ruby's huge and slow test/unit
-Name:		rubygem-%{oname}
-Version:	2.5.1
-Release:	%mkrel 1
-License:	MIT
+Summary:	minitest provides a complete suite of testing facilities supporting TDD, BDD, mocking, and benchmarking
+Name:		rubygem-%{rbname}
+
+Version:	2.11.0
+Release:	1
 Group:		Development/Ruby
-URL:		http://%{oname}.rubyforge.org/
-Source0:	http://gems.rubyforge.org/gems/%{oname}-%{version}.gem
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	ruby-RubyGems
-BuildRequires:	ruby-rdoc
-Requires:	rubygem-hoe >= 2.5.0 rubygem-gemcutter >= 0.2.1
-Requires:	rubygem-rubyforge >= 2.0.3
+License:	GPLv2+ or Ruby
+URL:		https://github.com/seattlerb/minitest
+Source0:	http://gems.rubyforge.org/gems/%{rbname}-%{version}.gem
+BuildRequires:	rubygems 
 BuildArch:	noarch
-Provides:	rubygem(%{oname}) = %{version}
 
 %description
-minitest/unit is a small and fast replacement for ruby's huge and slow
-test/unit. This is meant to be clean and easy to use both as a regular test
-writer and for language implementors that need a minimal set of methods to
-bootstrap a working unit test suite. mini/spec is a functionally complete spec
-engine. mini/mock, by Steven Baker, is a beautifully tiny mock object
-framework. (This package was called miniunit once upon a time)
+minitest provides a complete suite of testing facilities supporting
+TDD, BDD, mocking, and benchmarking.
+"I had a class with Jim Weirich on testing last week and we were
+allowed to choose our testing frameworks. Kirk Haines and I were
+paired up and we cracked open the code for a few test
+frameworks...
+I MUST say that mintiest is *very* readable / understandable
+compared to the 'other two' options we looked at. Nicely done and
+thank you for helping us keep our mental sanity."
+-- Wayne E. Seguin
+minitest/unit is a small and incredibly fast unit testing framework.
+It provides a rich set of assertions to make your tests clean and
+readable.
+minitest/spec is a functionally complete spec engine. It hooks onto
+minitest/unit and seamlessly bridges test assertions over to spec
+expectations.
+minitest/benchmark is an awesome way to assert the performance of your
+algorithms in a repeatable manner. Now you can assert that your newb
+co-worker doesn't replace your linear algorithm with an exponential
+one!
+minitest/mock by Steven Baker, is a beautifully tiny mock object
+framework.
+minitest/pride shows pride in testing and adds coloring to your test
+output. I guess it is an example of how to write IO pipes too. :P
+minitest/unit is meant to have a clean implementation for language
+implementors that need a minimal set of methods to bootstrap a working
+test suite. For example, there is no magic involved for test-case
+discovery.
+"Again, I can't praise enough the idea of a testing/specing
+framework that I can actually read in full in one sitting!"
+-- Piotr Szotkowski
+
+%package	doc
+Summary:	Documentation for %{name}
+Group:		Books/Computer books
+Requires:	%{name} = %{EVRD}
+BuildArch:	noarch
+
+%description	doc
+Documents, RDoc & RI documentation for %{name}.
 
 %prep
+%setup -q
 
 %build
+%gem_build
 
 %install
 rm -rf %{buildroot}
-gem install --local --install-dir %{buildroot}/%{ruby_gemdir} --force %{SOURCE0}
-
-rm -rf %{buildroot}%{ruby_gemdir}/{cache,gems/%{oname}-%{version}/ext}
-chmod u+w -R %{buildroot}
+%gem_install
 
 %clean
 rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
-%doc %{ruby_gemdir}/doc/%{oname}-%{version}
-%{ruby_gemdir}/gems/%{oname}-%{version}
-%{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/hoe
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/hoe/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/minitest
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/minitest/*.rb
+%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+
+%files doc
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.txt
+%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
