@@ -5,7 +5,7 @@ Summary:	minitest provides a complete suite of testing facilities supporting TDD
 Name:		rubygem-%{rbname}
 
 Version:	2.11.0
-Release:	1
+Release:	2
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
 URL:		https://github.com/seattlerb/minitest
