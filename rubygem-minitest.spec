@@ -68,11 +68,11 @@ Documents, RDoc & RI documentation for %{name}.
 
 %files
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/hoe
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/hoe/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/minitest
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/minitest/*.rb
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/hoe
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/hoe/*.rb
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/minitest
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/minitest/*.rb
 %{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
 
 %files doc
