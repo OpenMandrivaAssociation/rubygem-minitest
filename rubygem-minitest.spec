@@ -4,12 +4,12 @@
 Summary:	Testing facilities supporting TDD, BDD, mocking, and benchmarking
 Name:		rubygem-%{rbname}
 
-Version:	2.12.0
-Release:	2
+Version:	5.3.4
+Release:	1
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
 URL:		https://github.com/seattlerb/minitest
-Source0:	http://gems.rubyforge.org/gems/%{rbname}-%{version}.gem
+Source0:	http://gems.rubyforge.org/gems/minitest-5.3.4.gem
 BuildRequires:	rubygems 
 BuildArch:	noarch
 
@@ -62,11 +62,9 @@ Documents, RDoc & RI documentation for %{name}.
 %gem_build
 
 %install
-rm -rf %{buildroot}
 %gem_install
 
 %clean
-rm -rf %{buildroot}
 
 %files
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}
@@ -80,35 +78,3 @@ rm -rf %{buildroot}
 %files doc
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.txt
 %doc %{ruby_gemdir}/doc/%{rbname}-%{version}
-
-
-%changelog
-* Mon Apr 09 2012 Alexander Khrukin <akhrukin@mandriva.org> 2.12.0-1
-+ Revision: 790013
-- version update 2.12.0
-
-* Wed Feb 15 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 2.11.0-2
-+ Revision: 774161
-- mass rebuild of ruby packages against ruby 1.9.1
-
-* Fri Jan 27 2012 Alexander Khrukin <akhrukin@mandriva.org> 2.11.0-1
-+ Revision: 769352
-- version update 2.11.0
-
-* Mon Sep 12 2011 Alexander Barakin <abarakin@mandriva.org> 2.5.1-1
-+ Revision: 699541
-- missing rdoc fix
-- imported package rubygem-minitest
-
-* Thu Dec 09 2010 Rémy Clouard <shikamaru@mandriva.org> 1.7.1-2mdv2011.0
-+ Revision: 618332
-- add necessary provides
-
-* Sat Sep 18 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.7.1-1mdv2011.0
-+ Revision: 579406
-- new release: 1.7.1
-
-* Wed Feb 03 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.5.0-1mdv2010.1
-+ Revision: 500539
-- import rubygem-minitest
-
