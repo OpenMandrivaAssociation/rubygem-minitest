@@ -69,17 +69,17 @@ Documents, RDoc & RI documentation for %{name}.
 %clean
 
 %files
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/hoe
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/hoe/*.rb
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/minitest
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/minitest/*.rb
-%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+%dir %{gem_dir}/gems/%{rbname}-%{version}
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/hoe
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib
+%{gem_dir}/gems/%{rbname}-%{version}/lib/hoe/*.rb
+%{gem_dir}/gems/%{rbname}-%{version}/lib/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/minitest
+%{gem_dir}/gems/%{rbname}-%{version}/lib/minitest/*.rb
+%{gem_dir}/specifications/%{rbname}-%{version}.gemspec
 
 %files doc
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.txt
-%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
+%doc %{gem_dir}/gems/%{rbname}-%{version}/*.txt
+%doc %{gem_dir}/doc/%{rbname}-%{version}
 
 
