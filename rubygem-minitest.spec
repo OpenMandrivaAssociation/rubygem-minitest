@@ -6,7 +6,7 @@ Summary:	Testing facilities supporting TDD, BDD, mocking, and benchmarking
 Name:		rubygem-%{rbname}
 
 Version:	5.3.4
-Release:	3
+Release:	4
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
 URL:		https://github.com/seattlerb/minitest
